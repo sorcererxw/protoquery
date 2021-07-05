@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package test;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+option go_package = "./;test";
+
+message Request {
+  enum Enum {
+    NONE = 0;
+    ENUM1 = 1;
+    ENUM2 = 2;
+  }
+  Enum enum = 1;
+  string string = 2;
+  int64 int64 = 3;
+  int32 int32 = 4;
+  sint64 sint64 = 5;
+  sint32 sint32 = 6;
+  sfixed64 sfixed64 = 7;
+  sfixed32 sfixed32 = 8;
+  uint64 uint64 = 9;
+  uint32 uint32 = 10;
+  double double = 11;
+  float float = 12;
+  fixed64 fixed64 = 13;
+  fixed32 fixed32 = 14;
+  repeated string repeatedString = 15;
+  map<string, string> stringStringMap = 16;
+  google.protobuf.Timestamp timestamp = 17;
+  google.protobuf.Duration duration = 18;
+  bytes bytes = 19;
+  bool bool = 20;
+  repeated Enum repeatedEnum = 21;
+}
